@@ -8,15 +8,15 @@ const port = 3000;
 
 // Configuração do banco de dados
 const config = {
-    user: 'sa',
-    password: '1qaz@WSX',
-    server: '192.168.0.251',
+    user: 'seu_usuario',
+    password: 'sua_senha',
+    server: 'seu_servidor',
     port: 1537,
-    database: 'pbi_dw',
+    database: 'seu_banco',
     options: {
         encrypt: false,
         trustServerCertificate: true,
-        requestTimeout: 300000 // 5 minutos
+        requestTimeout: 300000
     }
 };
 

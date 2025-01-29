@@ -4,15 +4,15 @@ const cron = require('node-cron'); // Importa o pacote node-cron
 
 // Configuração do transporte de email
 const transporter = nodemailer.createTransport({
-    host: 'smtp.pitransportes.com.br', // Exemplo: smtp.gmail.com
-    port: 587, // Porta padrão para TLS
-    secure: false, // Não usar SSL direto
+    host: 'smtp.seu-dominio.com',
+    port: 587,
+    secure: false,
     auth: {
-        user: 'david.marques@pitransportes.com.br', // Email do remetente
-        pass: 'Pi@2024' // Senha ou token do email
+        user: 'seu_email',
+        pass: 'sua_senha'
     },
     tls: {
-        rejectUnauthorized: false // Permitir conexões inseguras (usar com cautela)
+        rejectUnauthorized: false
     }
 });
 
@@ -105,7 +105,7 @@ const sendEmail = async () => {
         // Configuração do email
         const mailOptions = {
             from: '"David Marques" <david.marques@pitransportes.com.br>', // Nome e email do remetente
-            to: 'david.marques@pitransportes.com.br', // Destinatário
+            to: 'felippe.costa@pitransportes.com.br', // Destinatário
             subject: 'Relatório do Orçamento', // Assunto
             html: `
                <div style="
@@ -182,6 +182,9 @@ const sendEmail = async () => {
     }
 };
 
+
+// // Executa a função de envio de email
+// sendEmail();
 
 // Agendamento da tarefa diária às 08:00
 cron.schedule('0 8 * * *', () => {
